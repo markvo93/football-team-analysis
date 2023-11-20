@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "football-team-analysis"
+version = "0.1.0"
+description = "A short summary of the project"
+authors = ["Mark Vollmer <mark-vollmer@web.de>"]
+license = "Proprietary"
+packages = [{ include = "football_team_analysis", from = "src" }, ]
+include = ["src/football_team_analysis/res/*"]
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.dev-dependencies]
+black = "^22.10"
+pre-commit = "^2.20"
+pytest = "^7.2"
+pytest-cov = "^4.0"
+jupyterlab = "^3.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
