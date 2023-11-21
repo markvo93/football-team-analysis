@@ -25,6 +25,7 @@ wheels/
 .installed.cfg
 *.egg
 
+
 # Unit test / coverage reports
 htmlcov/
 junit/
@@ -62,6 +63,8 @@ target/
 .env
 .venv
 venv*/
+poetry.lock
+pyproject.toml
 
 # OS specific
 .DS_Store
