@@ -10,6 +10,11 @@ include = ["src/football_team_analysis/res/*"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+pandas = "^1.3.4"
+matplotlib = "^3.4.3"
+seaborn = "^0.11.2"
+scipy = "^1.7.1"
+lxml = "^4.6.3"
 
 [tool.poetry.dev-dependencies]
 black = "^22.10"
