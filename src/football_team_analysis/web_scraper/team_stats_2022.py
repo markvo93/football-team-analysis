@@ -1,90 +1,65 @@
-import pandas as pd
-import requests
 import os
 
+import pandas as pd
+import requests
 
-url_team_stats_23 = 'https://fbref.com/en/comps/20/2022-2023/2022-2023-Bundesliga-Stats'
-
-# Define a function to get the data from the web 
-def get_team_regular_season_stats(url):
-    response = requests.get(url).text.replace('<!--', '').replace('-->', '')
-    df = pd.read_html(response)[0]
-    return df
-
-def get_team_standard_stats(url):
-    response = requests.get(url).text.replace('<!--', '').replace('-->', '')
-    df = pd.read_html(response, header=1)[2]
-    return df
-
-def get_team_passing_stats(url):
-    response = requests.get(url).text.replace('<!--', '').replace('-->', '')
-    df = pd.read_html(response, header=1)[10]
-    return df
-
-def get_team_pass_types_stats(url):
-    response = requests.get(url).text.replace('<!--', '').replace('-->', '')
-    df = pd.read_html(response, header=1)[12]
-    return df
-
-def get_team_goal_shot_creation_stats(url):
-    response = requests.get(url).text.replace('<!--', '').replace('-->', '')
-    df = pd.read_html(response, header=1)[14]
-    return df
-
-def get_team_defensive_actions_stats(url):
-    response = requests.get(url).text.replace('<!--', '').replace('-->', '')
-    df = pd.read_html(response, header=1)[16]
-    return df
- 
-def get_team_possesion_stats(url):
-    response = requests.get(url).text.replace('<!--', '').replace('-->', '')
-    df = pd.read_html(response, header=1)[18]
-    return df
-
-def get_team_misc_stats(url):
-    response = requests.get(url).text.replace('<!--', '').replace('-->', '')
-    df = pd.read_html(response, header=1)[22]
-    return df
-
-
-#calling the functions
-regular_season = get_team_regular_season_stats(url_team_stats_23)
-standard = get_team_standard_stats(url_team_stats_23)
-passing = get_team_passing_stats(url_team_stats_23)
-pass_types = get_team_pass_types_stats(url_team_stats_23)
-goal_shot_creation = get_team_goal_shot_creation_stats(url_team_stats_23)
-defensive_action = get_team_defensive_actions_stats(url_team_stats_23)
-possesion = get_team_possesion_stats(url_team_stats_23)
-misc = get_team_misc_stats(url_team_stats_23)
-
-
-# Create a directory to store the data
-directory = "../../../data/raw_data/2022"
-if not os.path.exists(directory):
-    os.makedirs(directory)
-
-# Define a dictionary containing the dataframes
-dataframes = {
-    'regular_season': regular_season,
-    'standard': standard,
-    'passing': passing,
-    'pass_types': pass_types,
-    'goal_shot_creation': goal_shot_creation,
-    'defensive_action': defensive_action,
-    'possesion': possesion,
-    'misc': misc
+stats_index = {
+    "team_regular_season": 0,
+    "team_standard": 2,
+    "team_passing": 10,
+    "team_pass_types": 12,
+    "team_goal_shot_creation": 14,
+    "team_defensive_actions": 16,
+    "team_possesion": 18,
+    "team_misc": 22,
 }
 
-# Save the Data to a CSV file
 
-for name, df in dataframes.items():
-    file_path = os.path.join(directory, f"{name}_2022.csv")
-    try: 
-        df.to_csv(file_path, index=False)
-        print(f"DataFrame '{name}' saved as {file_path}")
-    except Exception as e:
-        print(f"Error Saving DataFrame '{name}' could not be saved as {file_path}")
+def get_stats_from_url(url, stat_type):
+    """
+    Retrieves team statistics from a given URL.
+
+    Args:
+        url (str): The URL to scrape the data from.
+        stat_type (str): The type of statistics to retrieve.
+
+    Returns:
+        pandas.DataFrame: The DataFrame containing the team statistics.
+    """
+    response = requests.get(url).text.replace("<!--", "").replace("-->", "")
+    index = stats_index[stat_type]
+    header = 1 if index != 0 else 0
+
+    df = pd.read_html(response, header=header)[index]
+    return df
 
 
-    
+def fetch_data_to_csv(url, year):
+    """
+    Fetches data from a given URL and saves it to CSV files.
 
+    Args:
+        url (str): The URL to fetch the data from.
+        year (int): The year associated with the data.
+
+    Returns:
+        None
+    """
+    df = {}
+
+    for stat_type in stats_index:
+        df[stat_type] = get_stats_from_url(url, stat_type=stat_type)
+
+    # Create a directory to store the data
+    directory = f"data/raw_data/{year}"
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
+    # Save the Data to a CSV file
+    for name, df_data in df.items():
+        file_path = os.path.join(directory, f"{name}_{year}.csv")
+        try:
+            df_data.to_csv(file_path, index=False)
+            print(f"DataFrame '{name}' saved as {file_path}")
+        except Exception as e:
+            print(f"Error Saving DataFrame '{name}' could not be saved as {file_path}")
