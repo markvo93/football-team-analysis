@@ -35,15 +35,4 @@ def removing_columns(path, unnecessary_columns, directory):
         print(f"File {file.split('/')[-1]} has been processed and saved.")
     print("All files have been processed.")
 
-
-if __name__ == "__main__":
-    path = r"data/raw_data/2022"
-    unnecessary_columns = [
-        "Attendance",
-        "Top Team Scorer",
-        "Goalkeeper",
-        "Notes",
-        "# Pl",
-    ]
-    directory = "data/preprocessed_data/2022"
-    removing_hash_column(path, unnecessary_columns, directory)
+    return None
