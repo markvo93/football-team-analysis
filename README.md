@@ -1,6 +1,10 @@
 # football-team-analysis
 
-A short summary of the project
+## About
+
+The aim of this repo is to scrape footfall data/statistics from various sources, process them and evaluate and visualize them with regard to various KPIs. In this repo, the KPIS are focused on the football style of 1.FC Köln and will be analyzed further below. 
+
+![About](images/DataFlow_diagram.png)
 
 ## Getting Started
 
