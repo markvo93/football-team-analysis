@@ -13,7 +13,7 @@ After the data has been scraped, the raw data is saved in a csv format to be cle
 The cleansed data from the current season and the previous season is then used to perform the analysis. 
 The data flow diagram is shown below. 
 
-![About](images/dataflow.png)
+![About](images/dataflow.jpg)
 
 
 ## Analysis
