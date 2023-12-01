@@ -22,6 +22,3 @@ def load_data(path):
 
     # Return the list of dataframes
     return dfs
-
-
-print(load_data("data/preprocessed_data/2022"))
