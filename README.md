@@ -34,7 +34,7 @@ On the defensive side of the pitch, various stats can be looked at that contribu
 
 ![Zweikämpfe](images/Zweikämpfe.png)
 
-![zweikämpfe%](images/Zweikämpfe_in%.png)
+![Zweikämpfe%](images/Zweikämpfe_percent.png)
 
 In comparison, when it comes to ball conquests, you can see a strong deterioration from the league's third-best values ​​to the league average.
 When it comes to duels, FC has maintained its quota and is only marginally worse than in the previous season.
