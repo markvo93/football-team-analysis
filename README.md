@@ -13,7 +13,7 @@ After the data has been scraped, the raw data is saved in a csv format to be cle
 The cleansed data from the current season and the previous season is then used to perform the analysis. 
 The data flow diagram is shown below. 
 
-![About](images/dataflow.jpg)
+![Dataflow](images/dataflow.jpg)
 
 
 ## Analysis
@@ -30,11 +30,11 @@ The interesting thing for FC Köln, whose style of play is based on pressing, is
 
 On the defensive side of the pitch, various stats can be looked at that contribute a small factor to Cologne's style of play. To do this, we look at ball recoveries, duels and duels won.
 
-![About](images/Balleroberungen.jpg)
+![Balleroberungen](images/Balleroberungen.png)
 
-![About](images/Zweikämpfe.jpg)
+![Zweikämpfe](images/Zweikämpfe.png)
 
-![About](images/Zweikämpfe_in%.jpg)
+![zweikämpfe%](images/Zweikämpfe_in%.png)
 
 In comparison, when it comes to ball conquests, you can see a strong deterioration from the league's third-best values ​​to the league average.
 When it comes to duels, FC has maintained its quota and is only marginally worse than in the previous season.
@@ -42,7 +42,7 @@ When it comes to duels, FC has maintained its quota and is only marginally worse
 Running and sprinting are basic virtues of the game of football. The positive effects on the game are evident: spaces are condensed, the opponent is put under increased pressure and induced to make mistakes, and you create space yourself by running freely. That's why I took a closer look at the Bundesliga's mileage data and that could also be a factor that contributes to the fact that things aren't going so well at the moment.
 From the bundesliga leader in terms of mileage to almost the bottom. The discrepancy here is very large.
 
-![About](images/Laufleistungen_vergleich.jpg)
+![Laufleistungen](images/Laufleistungen_vergleich.png)
 
 Of course, running a lot and fast doesn't score goals, just as money doesn't score goals, but it is undoubtedly beneficial to run or sprint more.
 
@@ -51,7 +51,7 @@ Of course, running a lot and fast doesn't score goals, just as money doesn't sco
 One of the Cologne offensive ways of playing football is the crosses.
 The FC does very well here and the numbers clearly show the importance of crosses for the FC's game.
 
-![About](images/Anzahl_Flanken.jpg)
+![Flanken](images/Anzahl_Flanken.png)
 
 
 ### Outlook
