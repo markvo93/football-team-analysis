@@ -26,13 +26,40 @@ In order to be able to analyze FC Köln, I first had to understand a few of the 
 
 The interesting thing for FC Köln, whose style of play is based on pressing, is to look at key figures such as ball recoveries, running data and tackles. On the offensive side, crosses are a popular means of setting up the powerful strikers. 
 
+### Defensive
+
+On the defensive side of the pitch, various stats can be looked at that contribute a small factor to Cologne's style of play. To do this, we look at ball recoveries, duels and duels won.
+
+![About](images/Balleroberungen.jpg)
+
+![About](images/Zweikämpfe.jpg)
+
+![About](images/Zweikämpfe_in%.jpg)
+
+In comparison, when it comes to ball conquests, you can see a strong deterioration from the league's third-best values ​​to the league average.
+When it comes to duels, FC has maintained its quota and is only marginally worse than in the previous season.
+
+Running and sprinting are basic virtues of the game of football. The positive effects on the game are evident: spaces are condensed, the opponent is put under increased pressure and induced to make mistakes, and you create space yourself by running freely. That's why I took a closer look at the Bundesliga's mileage data and that could also be a factor that contributes to the fact that things aren't going so well at the moment.
+From the bundesliga leader in terms of mileage to almost the bottom. The discrepancy here is very large.
+
+![About](images/Laufleistungen_vergleich.jpg)
+
+Of course, running a lot and fast doesn't score goals, just as money doesn't score goals, but it is undoubtedly beneficial to run or sprint more.
+
+### Offensive
+
+One of the Cologne offensive ways of playing football is the crosses.
+The FC does very well here and the numbers clearly show the importance of crosses for the FC's game.
+
+![About](images/Anzahl_Flanken.jpg)
+
+
+### Outlook
+
 The statistics and analysis are a start, but it has its limitations. With better data, for example, KPIs could be developed to classify pressing behavior in a score to see how well 1.FC Köln presses. However, data such as ball conquests per minute, opponent's ball possession, defensive actions in general per minute in ball possession would be necessary for development.
 
 
-
-
-
-## Getting Started
+## Getting Started 
 
 To set up your local development environment, please run:
 
