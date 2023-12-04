@@ -14,7 +14,7 @@ data2 = load_data.load_data("data/preprocessed_data/2023")
 def mileage_compared(df1, df2, season1, season2):
     for df in [df1, df2]:
         if "km/perG" in df.columns:
-            df["km/perG"] = df["km/perG"] / 1000
+            df["km/perG"] = df["km/perG"] / 100
         else:
             print(f"There is no column called 'Km' in DataFrame {df}")
 
@@ -28,7 +28,7 @@ def mileage_compared(df1, df2, season1, season2):
     ax1.set_xlabel("Anzahl Kilometer pro Spiel")
     ax1.set_ylabel("Teams")
     ax1.set_xticklabels(ax1.get_xticklabels())
-    ax1.set_title(f"Laufleistung - Saison {season1}")
+    ax1.set_title(f"Laufleistung pro Spiel - Saison {season1}")
 
     # Highlight a specific team in the first plot
     # ax1.patches[0].set_facecolor("red")
